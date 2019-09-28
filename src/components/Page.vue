@@ -13,9 +13,10 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="currentPage"
-        :page-sizes="[5, 10, 20, 40]"
+        :page-sizes="[5,10, 20, 30, 40]"
         :page-size="pagesize"
-        layout="total, sizes,prev, pager, next"
+        background
+        layout="total, sizes,prev, pager, next, jumper"
         :total="tableData.length"
         prev-text="上一页"
         next-text="下一页">
@@ -24,39 +25,35 @@
   </div>
 </template>
 <script>
-  import axios from "axios"
-  export default {
-    name: "app",
-    data() {
-      return {
-        currentPage: 1, //默认显示页面为1
-        pagesize: 5, //    每页的数据条数
-        tableData: [], //需要data定义一些，tableData定义一个空数组，请求的数据都是存放这里面
-      }
-    },
-    mounted() {
-      this.getData();
-    },
-    methods: {
-      getData() {
-        axios.get('http://localhost:3000/posts').then(response => {
-          console.log(response.data);
-          this.tableData = response.data;
-        }, response => {
-          console.log("error");
-        });
-      },
-      //每页下拉显示数据
-      handleSizeChange: function(size) {
-        this.pagesize = size;
-        /*console.log(this.pagesize) */
-      },
-      //点击第几页
-      handleCurrentChange: function(currentPage) {
-        this.currentPage = currentPage;
-        /*console.log(this.currentPage) */
-      },
-
+import axios from 'axios'
+export default {
+  name: 'page',
+  data () {
+    return {
+      currentPage: 1, // 默认显示页面为1
+      pagesize: 5, //    每页的数据条数
+      tableData: [] // 需要data定义一些，tableData定义一个空数组，请求的数据都是存放这里面
     }
+  },
+  mounted () {
+    this.getData()
+  },
+  methods: {
+    getData () {
+      axios.get('http://localhost:3000/posts').then(response => {
+        console.log(response.data)
+        this.tableData = response.data
+      })
+    },
+    // 每页下拉显示数据
+    handleSizeChange: function (size) {
+      this.pagesize = size
+    },
+    // 点击第几页
+    handleCurrentChange: function (currentPage) {
+      this.currentPage = currentPage
+    }
+
   }
+}
 </script>
