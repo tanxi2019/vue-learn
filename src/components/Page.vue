@@ -1,6 +1,9 @@
 <template>
   <div>
-    <el-table :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"  v-loading="loading" style="width: 100%">
+    <el-table :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+              v-loading="loading"
+              element-loading-text="拼命加载中"
+              style="width: 100%">
       <el-table-column prop="id" label="日期" width="180">
       </el-table-column>
       <el-table-column prop="name" label="姓名" width="180">
@@ -33,7 +36,7 @@ export default {
       currentPage: 1, // 默认显示页面为1
       pagesize: 5, //    每页的数据条数
       tableData: [], // 需要data定义一些，tableData定义一个空数组，请求的数据都是存放这里面
-      loading: false
+      loading: false // 加载状态
     }
   },
   mounted () {
@@ -41,25 +44,22 @@ export default {
   },
   methods: {
     getData () {
-      axios.get('http://localhost:3000/posts').then(response => {
-        console.log(response.data)
-        this.tableData = response.data
-        this.loading = true
-        setTimeout(() => {
-          this.loading = false
+      axios.get('http://localhost:3000/posts').then(res => {
+        this.loading = true // 加载动画开始
+        setTimeout(() => { // 做延迟，效果更合理
+          this.tableData = res.data // 赋值
+          this.loading = false // 延迟2s,动画结束
         }, 2000)
       })
     },
-    // 每页下拉显示数据
-    handleSizeChange: function (size) {
+    handleSizeChange: function (size) { // 每页下拉显示数据
       this.pagesize = size
     },
-    // 点击第几页
-    handleCurrentChange: function (currentPage) {
-      this.currentPage = currentPage
-      this.loading = true
-      setTimeout(() => {
-        this.loading = false
+    handleCurrentChange: function (currentPage) { // 点击第几页
+      this.loading = true // 切换下一页，动画开始
+      setTimeout(() => { // 做延迟，效果更合理
+        this.currentPage = currentPage
+        this.loading = false // 切换下一页延迟2s,动画结束
       }, 2000)
     }
 

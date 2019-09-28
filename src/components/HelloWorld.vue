@@ -3,6 +3,7 @@
     <button @click="animation">animation</button>
     <button @click="tab">Tab</button>
     <button @click="page">Page</button>
+    <router-link to="/fold">Fold</router-link>
     <How></How>
     <!--  双向数据绑定 -->
     <div class="model">
@@ -21,7 +22,7 @@
     <!--  v-for循环 -->
     <div class="item">
       <ul>
-        <li v-for="item in user">
+        <li v-for="item in user" :key="index">
           <div class="li-1">{{item.id}}</div>
           <div class="li-2">{{item.name}}</div>
         </li>

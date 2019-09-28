@@ -5,6 +5,7 @@ import A from '@/components/A'
 import Tab from '@/components/Tab'
 import Animation from '@/components/animation'
 import Page from '@/components/page'
+import Fold from '@/components/fold'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/page',
       name: 'Page',
       component: Page
+    },
+    {
+      path: '/fold',
+      name: 'Fold',
+      component: Fold
     }
 
   ]
