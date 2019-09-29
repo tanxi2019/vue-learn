@@ -1,9 +1,26 @@
 <template>
   <div class="hello">
+    <el-menu
+      theme="dark"
+      :default-active="activeIndex"
+      class="el-menu-demo"
+      mode="horizontal"
+      text-color="#000000"
+      @select="handleSelect">
+      <el-menu-item index="1">QmaiBack</el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">用户：{{username}}</template>
+        <el-menu-item index="2-1" @click="loginOut">退出登录</el-menu-item>
+      </el-submenu>
+      <el-menu-item index="3">a</el-menu-item>
+    </el-menu>
+
     <button @click="animation">animation</button>
     <button @click="tab">Tab</button>
     <button @click="page">Page</button>
     <router-link to="/fold">Fold</router-link>
+    <router-link to="/login">登录</router-link>
+    <router-link to="/message">Msg</router-link>
     <How></How>
     <!--  双向数据绑定 -->
     <div class="model">
@@ -22,7 +39,7 @@
     <!--  v-for循环 -->
     <div class="item">
       <ul>
-        <li v-for="item in user" :key="index">
+        <li v-for="(item,index) in user" :key="index">
           <div class="li-1">{{item.id}}</div>
           <div class="li-2">{{item.name}}</div>
         </li>
@@ -63,7 +80,6 @@ const user = [{
   name: '哈哈4'
 }
 ]
-
 export default {
   name: 'HelloWorld',
   components: {
@@ -71,6 +87,8 @@ export default {
   },
   data () {
     return {
+      activeIndex:'1',
+      username:'',
       msg: '',
       user: user,
       message: '页面加载于 ' + new Date().toLocaleString(),
@@ -98,6 +116,24 @@ export default {
     },
     page: function () {
       this.$router.push('/page')
+    },
+    //退出登录
+    loginOut:function(){
+      window.sessionStorage.removeItem('data');
+      window.location.reload()
+    },
+    //登录选项
+    handleSelect:function(key,keypath){
+      console.log(key)
+    }
+  },
+  mounted:function(){ // 生命周期钩子
+    //sessionStorage中获取用户名
+    if(sessionStorage.length!==0){
+      // var user_detail=JSON.parse(sessionStorage.getItem('data'));
+      let user_detail=sessionStorage.getItem('data')
+      console.log(sessionStorage)
+      this.username=user_detail;
     }
   }
 

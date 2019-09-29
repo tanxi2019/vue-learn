@@ -115,5 +115,25 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "123",
+      "password": 123,
+      "type": "管理员"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": 123123,
+      "type": "管理员"
+    },
+    {
+      "id": 3,
+      "username": "visit",
+      "password": 123123,
+      "type": "访客"
+    }
+  ]
 }
