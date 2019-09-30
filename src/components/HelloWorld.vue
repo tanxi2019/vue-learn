@@ -7,7 +7,7 @@
       mode="horizontal"
       text-color="#000000"
       @select="handleSelect">
-      <el-menu-item index="1">QmaiBack</el-menu-item>
+      <el-menu-item index="1">你看我怎么样</el-menu-item>
       <el-submenu index="2">
         <template slot="title">用户：{{username}}</template>
         <el-menu-item index="2-1" @click="loginOut">退出登录</el-menu-item>

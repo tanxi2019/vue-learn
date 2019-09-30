@@ -33,15 +33,15 @@
         }
         axios.get('http://localhost:3000/users? username='+this.userName+'&password='+this.passWord).then((res)=>{
           if(res.data.length>0){
-            var ses=window.sessionStorage;
+            var ses = window.sessionStorage;
             //sessionStorage接收的好像是string所以这里吧data解析一下变成json字符串
             // var d=JSON.stringify(res.data[0].username)
-            var d=res.data[0].username
+            var d = res.data[0].username
             //把拿到的data放在sessionStorage中
             ses.setItem('data',d)
             //验证成功进入首页
             this.$router.push('/');
-            //这里有个小bug，登陆成功后导航上面需要刷新才能显示当前用户，暂时手动刷新
+            //，登陆成功
             window.location.reload()
           }else{
             this.$message({

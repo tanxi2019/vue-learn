@@ -17,42 +17,73 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta:{
+        needLogin:true,
+        title: '首页'
+      }
     },
     {
       path: '/a/:id',
       name: 'a',
-      component: A
+      component: A,
+      meta:{
+        needLogin:true,
+        title: '页面A'
+      }
     },
     {
       path: '/tab',
       name: 'Tab',
-      component: Tab
+      component: Tab,
+      meta:{
+        needLogin:true,
+        title: 'TAB切换'
+      }
     },
     {
       path: '/animation',
       name: 'Animation',
-      component: Animation
+      component: Animation,
+      meta:{
+        needLogin:true,
+        title: '动画页面'
+      }
     },
     {
       path: '/page',
       name: 'Page',
-      component: Page
+      component: Page,
+      meta:{
+        needLogin:true,
+        title: '分页'
+      }
     },
     {
       path: '/fold',
       name: 'Fold',
-      component: Fold
+      component: Fold,
+      meta:{
+        needLogin:true,
+        title: '侧边栏效果'
+      }
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta:{
+        title: '登录'
+      }
     },
     {
       path: '/message',
       name: 'Message',
-      component: Message
+      component: Message,
+      meta:{
+        needLogin:true,
+        title: '提示'
+      }
     }
 
   ]
