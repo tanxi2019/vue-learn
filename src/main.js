@@ -17,7 +17,7 @@ router.beforeEach((to,from,next)=>{
     // 动态 title
     window.document.title = to.meta.title;
     // 当页面需要登录的时候判断浏览器是否有sessionStorage
-    if(window.sessionStorage.data){
+    if(window.sessionStorage.msg){
       next()
     }else{
       // 如果没有，让页面进入登录页

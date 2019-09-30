@@ -119,19 +119,19 @@ export default {
     },
     //退出登录
     loginOut:function(){
-      window.sessionStorage.removeItem('data');
+      window.sessionStorage.removeItem('msg');
       window.location.reload()
     },
     //登录选项
     handleSelect:function(key,keypath){
-      console.log(key)
+      console.log(key,keypath)
     }
   },
   mounted:function(){ // 生命周期钩子
     //sessionStorage中获取用户名
     if(sessionStorage.length!==0){
       // var user_detail=JSON.parse(sessionStorage.getItem('data'));
-      let user_detail=sessionStorage.getItem('data')
+      let user_detail=sessionStorage.getItem('msg')
       console.log(sessionStorage)
       this.username=user_detail;
     }

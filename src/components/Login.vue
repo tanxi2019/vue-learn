@@ -23,7 +23,7 @@
       }
     },
     methods: {
-      login:function(){//登陆验证
+      login:function(){ // 登陆验证
         if(this.userName===''||this.passWord===''){
           this.$message({
             message: '账号密码不能为空！',
@@ -31,17 +31,19 @@
           });
           return;
         }
-        axios.get('http://localhost:3000/users? username='+this.userName+'&password='+this.passWord).then((res)=>{
+        let  parms = {
+          userName:this.userName,
+          passWord:this.passWord
+        }
+        axios.get('http://localhost:3000/users',{parms:parms}).then((res)=>{
           if(res.data.length>0){
             var ses = window.sessionStorage;
-            //sessionStorage接收的好像是string所以这里吧data解析一下变成json字符串
-            // var d=JSON.stringify(res.data[0].username)
             var d = res.data[0].username
-            //把拿到的data放在sessionStorage中
-            ses.setItem('data',d)
-            //验证成功进入首页
+            // 把拿到的data放在sessionStorage中
+            ses.setItem('msg',d)
+            // 验证成功进入首页
             this.$router.push('/');
-            //，登陆成功
+            // 登陆成功
             window.location.reload()
           }else{
             this.$message({
