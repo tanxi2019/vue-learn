@@ -37,7 +37,7 @@ export default {
       }
       axios.get('http://localhost:3000/users', {parms: parms}).then((res) => {
         if (res.data.length > 0) {
-          var ses = window.sessionStorage
+          var ses = window.localStorage
           var d = res.data[0].username
           // 把拿到的data放在sessionStorage中
           ses.setItem('msg', d)

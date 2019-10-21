@@ -72,5 +72,5 @@ export default {
     width: 200px;
     min-height: 400px;
   }
-  .head{height: 64px;background-color: #eee;}
+  .head{height: 64px;background-color: #eee;line-height: 64px;}
 </style>

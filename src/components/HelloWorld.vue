@@ -63,10 +63,10 @@
 
 <script>
 import How from '@/components/How'
-const user = [{
-  id: 1,
+const user = [
+  {id: 1,
   name: '哈哈1'
-},
+  },
 {
   id: 2,
   name: '哈哈2'
@@ -119,7 +119,7 @@ export default {
     },
     //退出登录
     loginOut:function(){
-      window.sessionStorage.removeItem('msg');
+      window.localStorage.removeItem('msg');
       window.location.reload()
     },
     //登录选项
@@ -128,11 +128,11 @@ export default {
     }
   },
   mounted:function(){ // 生命周期钩子
-    //sessionStorage中获取用户名
-    if(sessionStorage.length!==0){
+    //localStorage || sessionStorage中获取用户名
+    if(localStorage.length!==0){
       // var user_detail=JSON.parse(sessionStorage.getItem('data'));
-      let user_detail=sessionStorage.getItem('msg')
-      console.log(sessionStorage)
+      let user_detail = localStorage.getItem('msg')
+      console.log(localStorage)
       this.username=user_detail;
     }
   }
