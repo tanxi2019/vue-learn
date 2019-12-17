@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>TAB切换方法2</p>
+    <p>TAB切换方法1</p>
     <div class="tab">
       <div class="tab-title">
         <ul>
@@ -17,7 +17,7 @@
         <div v-show="cur===3">内容四</div>
       </div>
     </div>
-    <p>TAB切换方法1</p>
+    <p>TAB切换方法2</p>
     <div class="tab">
       <div  class="tab-title">
         <ul>
