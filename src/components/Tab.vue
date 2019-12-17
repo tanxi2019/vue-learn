@@ -71,6 +71,7 @@
     height: 400px;
     margin: 0 auto;
     border: 1px solid #ccc;
+    margin-bottom: 50px;
   }
   p{
     width: 600px;
