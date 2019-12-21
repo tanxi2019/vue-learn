@@ -38,15 +38,15 @@ export default {
         speed: 800,
         keyboard: true, // 键盘
         freeMode: false,
-        // pagination: { // 分页器
-        //   el: '.swiper-pagination',
-        //   dynamicBullets: false, // 手动切换之后继续自动轮播
-        //   clickable: true // 允许点击小圆点跳转
-        // },
-        // navigtion: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev'
-        // },
+        pagination: { // 分页器
+          el: '.swiper-pagination',
+          dynamicBullets: false, // 手动切换之后继续自动轮播
+          clickable: true // 允许点击小圆点跳转
+        },
+        navigtion: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         on: {}
       }
     }
