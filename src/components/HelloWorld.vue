@@ -21,6 +21,7 @@
     <router-link to="/fold">Fold</router-link>
     <router-link to="/login">登录</router-link>
     <router-link to="/message">Msg</router-link>
+    <router-link to="/swiper">swiper</router-link>
     <How></How>
     <!--  双向数据绑定 -->
     <div class="model">

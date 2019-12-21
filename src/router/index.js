@@ -8,6 +8,7 @@ import Page from '@/components/page'
 import Fold from '@/components/fold'
 import Login from '@/components/login'
 import Message from '@/components/message'
+import Swiper from '@/components/Swiper'
 
 Vue.use(Router)
 
@@ -18,8 +19,8 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '首页'
       }
     },
@@ -27,8 +28,8 @@ export default new Router({
       path: '/a/:id',
       name: 'a',
       component: A,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '页面A'
       }
     },
@@ -36,8 +37,8 @@ export default new Router({
       path: '/tab',
       name: 'Tab',
       component: Tab,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: 'TAB切换'
       }
     },
@@ -45,8 +46,8 @@ export default new Router({
       path: '/animation',
       name: 'Animation',
       component: Animation,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '动画页面'
       }
     },
@@ -54,8 +55,8 @@ export default new Router({
       path: '/page',
       name: 'Page',
       component: Page,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '分页'
       }
     },
@@ -63,8 +64,8 @@ export default new Router({
       path: '/fold',
       name: 'Fold',
       component: Fold,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '侧边栏效果'
       }
     },
@@ -72,7 +73,7 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
-      meta:{
+      meta: {
         title: '登录'
       }
     },
@@ -80,9 +81,18 @@ export default new Router({
       path: '/message',
       name: 'Message',
       component: Message,
-      meta:{
-        needLogin:true,
+      meta: {
+        needLogin: true,
         title: '提示'
+      }
+    },
+    {
+      path: '/swiper',
+      name: 'Swiper',
+      component: Swiper,
+      meta: {
+        needLogin: true,
+        title: 'Swiper'
       }
     }
 

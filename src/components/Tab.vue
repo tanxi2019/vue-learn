@@ -37,32 +37,32 @@
 </template>
 
 <script>
-  export default{
-    name: 'Tab',
-    data () {
-      return {
-        tabTitle: [
-          {title: '标题一'},
-          {title: '标题二'},
-          {title: '标题三'},
-          {title: '标题四'}
-        ],
-        tabMain: [
-          {content: '内容一'},
-          {content: '内容二'},
-          {content: '内容三'},
-          {content: '内容四'}
-        ],
-        cur: 0 ,// 默认选中第一个tab
-        iscur: 0 // 默认选中第一个tab
-      }
-    },
-    methods: {
-      tabCur: function (index) {
-        this.iscur = index
-      }
+export default{
+  name: 'Tab',
+  data () {
+    return {
+      tabTitle: [
+        {title: '标题一'},
+        {title: '标题二'},
+        {title: '标题三'},
+        {title: '标题四'}
+      ],
+      tabMain: [
+        {content: '内容一'},
+        {content: '内容二'},
+        {content: '内容三'},
+        {content: '内容四'}
+      ],
+      cur: 0, // 默认选中第一个tab
+      iscur: 0 // 默认选中第一个tab
+    }
+  },
+  methods: {
+    tabCur: function (index) {
+      this.iscur = index
     }
   }
+}
 </script>
 
 <style type="text/css">
@@ -82,7 +82,6 @@
     margin: 0 auto;
     font-weight: bold;
   }
-
 
   .tab-title{
     width: 100%;

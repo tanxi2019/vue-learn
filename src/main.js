@@ -12,18 +12,18 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 // 全局守卫，路由拦截
-router.beforeEach((to,from,next)=>{
-  if(to.meta.needLogin){
+router.beforeEach((to, from, next) => {
+  if (to.meta.needLogin) {
     // 动态 title
-    window.document.title = to.meta.title;
+    window.document.title = to.meta.title
     // 当页面需要登录的时候判断浏览器是否有localStorage || sessionStorage
-    if(window.localStorage.msg){
+    if (window.localStorage.msg) {
       next()
-    }else{
+    } else {
       // 如果没有，让页面进入登录页
       next('/login')
     }
-  }else{
+  } else {
     next()
   }
 })
