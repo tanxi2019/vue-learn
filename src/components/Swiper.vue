@@ -54,7 +54,11 @@ export default {
       },
     }
   },
-  methods: {}
+  methods: {
+    callback: function() {
+      console.log("测试")
+    }
+  }
 }
 </script>
 
